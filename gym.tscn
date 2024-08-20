@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2jg27h7pdg5t"]
+[gd_scene load_steps=20 format=3 uid="uid://d2jg27h7pdg5t"]
 
 [ext_resource type="Texture2D" uid="uid://cmf6cdbrb0aks" path="res://art/blue.png" id="1_1xubb"]
 [ext_resource type="PackedScene" uid="uid://corxq7bnhorhn" path="res://trainer.tscn" id="1_4rumq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ce6d82lrp8ix" path="res://art/D.png" id="4_wvv5f"]
 [ext_resource type="Texture2D" uid="uid://cyjvthxsf6wao" path="res://art/pixil-frame-0 (34).png" id="5_d7soa"]
 [ext_resource type="Texture2D" uid="uid://co21hdmuitdke" path="res://art/space.png" id="5_e0s5p"]
+[ext_resource type="Texture2D" uid="uid://dbl28xkeq5y3v" path="res://art/pixil-frame-0 (30).png" id="5_e4ue3"]
 [ext_resource type="Texture2D" uid="uid://doi8w7202cyvj" path="res://art/E.png" id="6_wi5nh"]
 [ext_resource type="Texture2D" uid="uid://mdxijnsb6dn4" path="res://art/boxing ring.png" id="8_y0crt"]
 [ext_resource type="Texture2D" uid="uid://b2scwkct0bxj0" path="res://art/scale.png" id="9_y5rgt"]
@@ -166,6 +167,26 @@ texture_filter = 1
 position = Vector2(-911, 157)
 texture = ExtResource("5_d7soa")
 
+[node name="Pixil-frame-0(30)" type="Sprite2D" parent="machines"]
+texture_filter = 1
+position = Vector2(-149, 153)
+texture = ExtResource("5_e4ue3")
+
+[node name="Pixil-frame-0(30)2" type="Sprite2D" parent="machines"]
+texture_filter = 1
+position = Vector2(-99, 153)
+texture = ExtResource("5_e4ue3")
+
+[node name="Pixil-frame-0(30)3" type="Sprite2D" parent="machines"]
+texture_filter = 1
+position = Vector2(-44, 153)
+texture = ExtResource("5_e4ue3")
+
+[node name="Pixil-frame-0(30)4" type="Sprite2D" parent="machines"]
+texture_filter = 1
+position = Vector2(11, 153)
+texture = ExtResource("5_e4ue3")
+
 [node name="Blue" type="Sprite2D" parent="."]
 position = Vector2(-1356, -94)
 scale = Vector2(37.9271, 51.5937)
@@ -251,15 +272,15 @@ scale = Vector2(0.0263664, 0.0193822)
 texture = ExtResource("6_wi5nh")
 
 [node name="miniGameStart" parent="." instance=ExtResource("2_cxf27")]
-position = Vector2(-34, -176)
+position = Vector2(24, -153)
 miniGame = "punch"
 
 [node name="miniGameStart2" parent="." instance=ExtResource("2_cxf27")]
-position = Vector2(189, -174)
+position = Vector2(595, -72)
 miniGame = "lift"
 
 [node name="miniGameStart3" parent="." instance=ExtResource("2_cxf27")]
-position = Vector2(49, -190)
+position = Vector2(726, -154)
 miniGame = "run"
 
 [node name="TileMap" type="TileMap" parent="."]
