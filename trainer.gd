@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name trainer
 
+@export var CamLock :Node2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -31,3 +33,12 @@ func _physics_process(delta):
 		$AnimationPlayer.play("run")
 	else:
 		$AnimationPlayer.play("stand")
+		
+	
+	
+	if position.x > 469:
+		CamLock.get_child(0).enabled = true
+		$Camera2D.enabled = false
+	else:
+		$Camera2D.enabled = true
+		CamLock.get_child(0).enabled = false
