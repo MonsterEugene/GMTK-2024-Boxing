@@ -26,3 +26,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if velocity.x != 0:
+		$AnimationPlayer.play("run")
+	else:
+		$AnimationPlayer.play("stand")

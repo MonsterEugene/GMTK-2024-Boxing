@@ -1,11 +1,116 @@
-[gd_scene load_steps=3 format=3 uid="uid://corxq7bnhorhn"]
+[gd_scene load_steps=8 format=3 uid="uid://corxq7bnhorhn"]
 
 [ext_resource type="Script" path="res://trainer.gd" id="1_ybk4f"]
+[ext_resource type="Texture2D" uid="uid://cm2j4ne5bqtgt" path="res://art/pixil-frame-0 (31).png" id="2_5xp5m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arj45"]
+radius = 4.4
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_56mtk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pixil-frame-0(13):scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pixil-frame-0(13):position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_1a8ne"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pixil-frame-0(13):scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.16667, 0.666667), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pixil-frame-0(13):position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -6), Vector2(0, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_05otx"]
+resource_name = "stand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pixil-frame-0(13):position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pixil-frame-0(13):scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ljfn"]
+_data = {
+"RESET": SubResource("Animation_56mtk"),
+"run": SubResource("Animation_1a8ne"),
+"stand": SubResource("Animation_05otx")
+}
 
 [node name="trainer" type="CharacterBody2D"]
 script = ExtResource("1_ybk4f")
 
+[node name="Pixil-frame-0(13)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, -8)
+texture = ExtResource("2_5xp5m")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_arj45")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "stand"
+libraries = {
+"": SubResource("AnimationLibrary_5ljfn")
+}
