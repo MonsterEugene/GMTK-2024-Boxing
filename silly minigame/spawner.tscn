@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://mfod6g0hwobj"]
+
+[node name="spawner" type="Node2D"]
+position = Vector2(7, 2)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(779, 5)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(672, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(529, -1)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(414, 3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
