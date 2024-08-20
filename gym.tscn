@@ -281,7 +281,6 @@ miniGame = "lift"
 
 [node name="miniGameStart3" parent="." instance=ExtResource("2_cxf27")]
 position = Vector2(726, -154)
-miniGame = "run"
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(1.11615, 0.997054)
