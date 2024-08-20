@@ -11,7 +11,7 @@ func _on_body_entered(body):
 		
 
 func _input(event):
-	if Input.is_action_just_pressed('space') && s == true:
+	if Input.is_action_just_pressed('w') && s == true:
 		print("minigame")
 		get_tree().change_scene_to_file("res://" + miniGame + ".tscn")
 		
