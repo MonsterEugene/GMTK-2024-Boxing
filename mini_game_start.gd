@@ -6,6 +6,7 @@ var s = false
 func _on_body_entered(body):
 	if body is trainer:
 		#make button thing appear
+		$w.visible = true
 		
 		s = true
 		
@@ -20,3 +21,4 @@ func _on_body_exited(body):
 	s = false
 	
 	#make button disapear? 
+	$w.visible = false

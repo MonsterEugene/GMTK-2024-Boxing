@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx8hi026f03kp"]
+[gd_scene load_steps=4 format=3 uid="uid://bx8hi026f03kp"]
 
 [ext_resource type="Script" path="res://mini_game_start.gd" id="1_uq6su"]
+[ext_resource type="Texture2D" uid="uid://b18bifc6eg4tg" path="res://art/pixil-frame-0 (35).png" id="2_hpal5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g3hkb"]
 radius = 31.0
@@ -10,6 +11,12 @@ script = ExtResource("1_uq6su")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g3hkb")
+
+[node name="w" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-22, -9)
+texture = ExtResource("2_hpal5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
